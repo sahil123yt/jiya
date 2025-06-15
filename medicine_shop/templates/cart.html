@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+  <h2>Your Cart</h2>
+  {% for item in cart %}
+  <div class="medicine-card">
+    {{ item.name }} - ₹{{ item.price }}
+  </div>
+  {% else %}
+  <p>Cart is empty!</p>
+  {% endfor %}
+  <a href="/shop" class="button">Continue Shopping</a>
+</div>
+</body>
+</html>

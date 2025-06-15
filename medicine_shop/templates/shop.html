@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shop</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+  <h2>Available Medicines</h2>
+  {% for med in medicines %}
+  <div class="medicine-card">
+    <strong>{{ med.name }}</strong><br>
+    Price: ₹{{ med.price }}<br>
+    <a href="/add_to_cart/{{ med.id }}" class="button">Add to Cart</a>
+  </div>
+  {% endfor %}
+  <a href="/cart" class="button">Go to Cart</a>
+</div>
+</body>
+</html>
